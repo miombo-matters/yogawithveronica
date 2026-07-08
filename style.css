@@ -361,6 +361,10 @@ h3 { font-size: 1.2rem; font-weight: 500; }
   background-color: var(--blue-tint) !important;
   border-color: var(--sand-line) !important;
 }
+/* Hide day rows that have no class cards */
+.momo-embed .momo-schedule__weekly-grid > div:not(:has(.momo-schedule-item)) {
+  display: none;
+}
 
 /* ===== MAILING ===== */
 .mailing-inner { max-width: 560px; margin-inline: auto; text-align: center; }
