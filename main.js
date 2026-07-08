@@ -21,33 +21,32 @@ if (toggle && navLinks) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Hide Momo "No class" day sections after widget finishes rendering
+// Hide Momo "No class" day rows.
+// The widget renders a flat grid: [day-title, "No class"|item, day-title, item, ...]
+// So we hide the "No class" element AND its preceding day-title sibling.
 function hideEmptyDays() {
-  const schedule = document.querySelector('[data-momo-schedule]');
-  if (!schedule) return;
-
-  schedule.querySelectorAll('*').forEach(el => {
-    if (el.childElementCount > 0 || el.textContent.trim() !== 'No class') return;
-    // Walk up to the direct child of the weekly/list grid = the day section
-    let node = el;
-    while (node.parentElement && node.parentElement !== schedule) {
-      const p = node.parentElement;
-      if (p.classList.contains('momo-schedule__weekly-grid') ||
-          p.classList.contains('momo-list-schedule__grid')) {
-        node.style.display = 'none';
-        return;
+  document.querySelectorAll(
+    '.momo-schedule__weekly-grid, .momo-list-schedule__grid'
+  ).forEach(grid => {
+    Array.from(grid.children).forEach(child => {
+      if (child.childElementCount === 0 && child.textContent.trim() === 'No class') {
+        child.style.display = 'none';
+        if (child.previousElementSibling) {
+          child.previousElementSibling.style.display = 'none';
+        }
       }
-      node = p;
-    }
+    });
   });
 }
 
-// Debounce so we run only after the widget has stopped mutating the DOM
-let momoTimer;
+// Run at intervals to catch initial render, then watch for week navigation
+setTimeout(hideEmptyDays, 500);
+setTimeout(hideEmptyDays, 1500);
 const momoEl = document.querySelector('[data-momo-schedule]');
 if (momoEl) {
+  let momoTimer;
   new MutationObserver(() => {
     clearTimeout(momoTimer);
-    momoTimer = setTimeout(hideEmptyDays, 300);
+    momoTimer = setTimeout(hideEmptyDays, 400);
   }).observe(momoEl, { childList: true, subtree: true });
 }
