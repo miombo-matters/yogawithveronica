@@ -17,6 +17,20 @@ if (toggle && navLinks) {
   });
 }
 
+// Venue map — two markers, both churches visible
+const mapEl = document.getElementById('venue-map');
+if (mapEl && typeof L !== 'undefined') {
+  const map = L.map('venue-map', { scrollWheelZoom: false }).setView([55.9141, -3.2020], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+  L.marker([55.9167, -3.2048]).addTo(map)
+    .bindPopup('<strong>Morningside Parish Church</strong><br>Braid Road<br><em>Beginners Yoga &amp; Vinyasa Flow</em>');
+  L.marker([55.9116, -3.1992]).addTo(map)
+    .bindPopup('<strong>Greenbank Parish Church</strong><br>Braidburn Terrace<br><em>Gentle Yoga</em>');
+}
+
 // Footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

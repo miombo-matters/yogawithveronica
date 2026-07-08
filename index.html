@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
   <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.momo.yoga/plugins/schedule-integration/schedule.css">
   <script type="module" crossorigin="anonymous" src="https://cdn.momo.yoga/plugins/schedule-integration/schedule.js"></script>
 </head>
@@ -213,18 +214,7 @@
             </div>
           </div>
           <div class="location-map">
-            <!-- Map showing both Morningside Parish Church and Greenbank Parish Church -->
-            <!-- Replace with a Google My Maps embed showing both pins, or use the iframe below once you have the embed URL -->
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3027.0!2d-3.2145!3d55.9165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMorningside%20Parish%20Church%2C%20Braid%20Road%2C%20Edinburgh!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk"
-              title="Map showing Morningside and Greenbank Parish Churches"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
-            <p class="map-note">
-              <small><!-- Replace the iframe above with a Google My Maps embed showing both church pins for best results --></small>
-            </p>
+            <div id="venue-map" role="region" aria-label="Map showing class venues"></div>
           </div>
         </div>
       </div>
@@ -254,6 +244,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="main.js"></script>
 </body>
 </html>
