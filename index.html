@@ -118,31 +118,75 @@
     <section class="classes section bg-tint" id="classes" aria-labelledby="classes-heading">
       <div class="container">
         <h2 id="classes-heading">Types of Classes</h2>
-        <div class="classes-grid">
+        <div class="classes-list">
 
-          <article class="class-card" aria-label="Gentle Yoga">
-            <div class="card-badge" aria-label="New class">NEW</div>
-            <h3>Gentle Yoga</h3>
-            <p class="class-time">Wednesdays · 10:30–11:30 am</p>
-            <p class="class-location">Greenbank Parish Church</p>
+          <article class="class-card" aria-label="Vinyasa Flow">
+            <div class="class-card-header">
+              <div>
+                <h3>Vinyasa Flow <span class="card-sub">(all levels)</span></h3>
+                <p class="class-time">Thursdays · 9:30–10:30 am</p>
+                <p class="class-location">Morningside Parish Church</p>
+              </div>
+              <a href="#book" class="btn btn-filled btn-sm">Book</a>
+            </div>
+            <div class="class-desc">
+              <p class="class-desc-preview">We begin with a grounding practice to connect the mind with body and breath.</p>
+              <div class="class-desc-more" hidden>
+                <p>You will have the opportunity to move, open, and build strength, as well as develop mind-body awareness. The class will enable you to explore what your body needs, with guidance for adaptations and variations provided. You will leave feeling grounded, calm, and energised for the day.</p>
+                <p class="class-note">*Please bring your own mat and any props such as blocks.<br>*This class is not suitable during pregnancy.</p>
+              </div>
+              <button class="class-toggle" aria-expanded="false">Show more</button>
+            </div>
           </article>
 
           <article class="class-card" aria-label="Beginners Yoga">
-            <h3>Beginners Yoga</h3>
-            <p class="class-time">Fridays · 9:30–10:30 am</p>
-            <p class="class-location">Morningside Parish Church</p>
+            <div class="class-card-header">
+              <div>
+                <h3>Beginners Yoga</h3>
+                <p class="class-time">Fridays · 9:30–10:30 am</p>
+                <p class="class-location">Morningside Parish Church</p>
+              </div>
+              <a href="#book" class="btn btn-filled btn-sm">Book</a>
+            </div>
+            <div class="class-desc">
+              <p class="class-desc-preview">This class is for beginners, or those returning to a weekly yoga class following a break.</p>
+              <div class="class-desc-more" hidden>
+                <p>The postures will include poses on the floor, standing up and sitting down, allowing your body to develop and maintain flexibility, mobility and strength. Simple breathing practices (pranayama), meditation, and guided relaxation will be part of the class.</p>
+                <p>The class will give you confidence to begin your own yoga practice at home if you wish, and is designed to help you release any stress that may have built up through the week. You will leave feeling refreshed and ready for the day.</p>
+                <p>Please bring a yoga mat and two yoga blocks. If you have any questions please get in touch.</p>
+                <p class="class-note">*This class is not suitable during pregnancy.</p>
+              </div>
+              <button class="class-toggle" aria-expanded="false">Show more</button>
+            </div>
           </article>
 
-          <article class="class-card" aria-label="Vinyasa Flow">
-            <h3>Vinyasa Flow <span class="card-sub">(all levels)</span></h3>
-            <p class="class-time">Thursdays · 9:30–10:30 am</p>
-            <p class="class-location">Morningside Parish Church</p>
+          <article class="class-card" aria-label="Gentle Yoga">
+            <div class="card-badge" aria-label="New class">NEW</div>
+            <div class="class-card-header">
+              <div>
+                <h3>Gentle Yoga</h3>
+                <p class="class-time">Wednesdays · 10:30–11:30 am</p>
+                <p class="class-location">Greenbank Church</p>
+              </div>
+              <a href="#book" class="btn btn-filled btn-sm">Book</a>
+            </div>
+            <div class="class-desc">
+              <p class="class-desc-preview">A slower-paced class focusing on gentle movement, breath and relaxation — suitable for all levels including those with limited mobility or those new to yoga.</p>
+            </div>
           </article>
 
           <article class="class-card" aria-label="Online classes">
-            <h3>Online Classes</h3>
-            <p class="class-time">Join from anywhere</p>
-            <p class="class-location">Live &amp; on-demand options</p>
+            <div class="class-card-header">
+              <div>
+                <h3>Online Classes</h3>
+                <p class="class-time">Join from anywhere</p>
+                <p class="class-location">Live &amp; on-demand options</p>
+              </div>
+              <a href="mailto:info@yogawithveronica.co.uk" class="btn btn-filled btn-sm">Enquire</a>
+            </div>
+            <div class="class-desc">
+              <p class="class-desc-preview">Can't make it in person? Online classes let you practise from the comfort of your own home, with live sessions and on-demand recordings available.</p>
+            </div>
           </article>
 
         </div>
@@ -178,20 +222,14 @@
         <h2 id="mailing-heading">Stay in the loop</h2>
         <p>Occasional updates on new classes, workshops and timetable changes.</p>
 
-        <!-- MAILING LIST EMBED — replace this comment block with your provider's snippet (MailerLite / Buttondown / Mailchimp) -->
-        <form class="mailing-form" action="mailto:info@yogawithveronica.co.uk" method="get" aria-label="Sign up for mailing list">
-          <label for="email-input" class="sr-only">Email address</label>
-          <input
-            type="email"
-            id="email-input"
-            name="email"
-            placeholder="Your email address"
-            required
-            autocomplete="email"
-          >
-          <button type="submit" class="btn btn-filled btn-light">Sign up</button>
-        </form>
-        <!-- END MAILING LIST EMBED -->
+        <div class="mailing-embed">
+          <iframe
+            scrolling="no"
+            style="width:100%;height:220px;border:0;border-radius:8px"
+            src="https://buttondown.com/yogawithveronica.co.uk?as_embed=true"
+            title="Sign up for the Yoga with Veronica mailing list"
+          ></iframe>
+        </div>
 
       </div>
     </section>
@@ -208,7 +246,7 @@
               <p class="venue-classes">Beginners Yoga &amp; Vinyasa Flow</p>
             </div>
             <div class="venue">
-              <h3>Greenbank Parish Church</h3>
+              <h3>Greenbank Church</h3>
               <p class="venue-address">Braidburn Terrace, Edinburgh</p>
               <p class="venue-classes">Gentle Yoga</p>
             </div>
