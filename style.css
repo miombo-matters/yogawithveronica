@@ -312,7 +312,7 @@ h3 { font-size: 1.2rem; font-weight: 500; }
 }
 .class-desc { color: var(--ink); }
 .class-desc-preview { margin-bottom: 0.5rem; }
-.class-desc-more { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.class-desc-more:not([hidden]) { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .class-note { color: var(--muted); font-size: 0.9rem; }
 .class-toggle {
   background: none;
