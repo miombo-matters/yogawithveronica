@@ -385,7 +385,26 @@ h3 { font-size: 1.2rem; font-weight: 500; }
 /* ===== MAILING ===== */
 .mailing-inner { max-width: 560px; margin-inline: auto; text-align: center; }
 .mailing-inner h2 { margin-bottom: 0.5rem; }
-.mailing-embed { margin-top: 1.5rem; width: 100%; }
+.mailing-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.mailing-form input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.65em 1.2em;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+}
+.mailing-form input[type="email"]::placeholder { color: rgba(255,255,255,0.6); }
+.mailing-form input[type="email"]:focus { border-color: #fff; background: rgba(255,255,255,0.2); }
 
 /* ===== LOCATION ===== */
 .location h2 { margin-bottom: 2rem; }

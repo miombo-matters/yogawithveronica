@@ -222,14 +222,16 @@
         <h2 id="mailing-heading">Stay in the loop</h2>
         <p>Occasional updates on new classes, workshops and timetable changes.</p>
 
-        <div class="mailing-embed">
-          <iframe
-            scrolling="no"
-            style="width:100%;height:220px;border:0;border-radius:8px"
-            src="https://buttondown.com/yogawithveronica.co.uk?as_embed=true"
-            title="Sign up for the Yoga with Veronica mailing list"
-          ></iframe>
-        </div>
+        <form
+          action="https://buttondown.com/api/emails/embed-subscribe/yogawithveronica.co.uk"
+          method="post"
+          class="mailing-form"
+          aria-label="Sign up for mailing list"
+        >
+          <label for="bd-email" class="sr-only">Email address</label>
+          <input type="email" id="bd-email" name="email" placeholder="Your email address" required autocomplete="email">
+          <button type="submit" class="btn btn-filled btn-light">Sign up</button>
+        </form>
 
       </div>
     </section>
