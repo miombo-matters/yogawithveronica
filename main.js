@@ -46,25 +46,23 @@ if (mapEl && typeof L !== 'undefined') {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Hide Momo "No class" day rows.
-// The widget renders a flat grid: [day-title, "No class"|item, day-title, item, ...]
-// So we hide the "No class" element AND its preceding day-title sibling.
+// Hide day columns with no classes.
+// DOM: .momo-schedule__weekly > div (one per day, no class attr)
+//   contains .momo-schedule-item when a class exists, otherwise a <p>No class</p>.
+const noClassesMsg = document.querySelector('.momo-no-classes-week');
+
 function hideEmptyDays() {
-  document.querySelectorAll(
-    '.momo-schedule__weekly-grid, .momo-list-schedule__grid'
-  ).forEach(grid => {
-    Array.from(grid.children).forEach(child => {
-      if (child.childElementCount === 0 && child.textContent.trim() === 'No class') {
-        child.style.display = 'none';
-        if (child.previousElementSibling) {
-          child.previousElementSibling.style.display = 'none';
-        }
-      }
-    });
+  const dayDivs = document.querySelectorAll('.momo-schedule__weekly > div');
+  if (!dayDivs.length) return;
+  let visibleCount = 0;
+  dayDivs.forEach(dayDiv => {
+    const hasClass = !!dayDiv.querySelector('.momo-schedule-item');
+    dayDiv.style.display = hasClass ? '' : 'none';
+    if (hasClass) visibleCount++;
   });
+  if (noClassesMsg) noClassesMsg.hidden = visibleCount > 0;
 }
 
-// Run at intervals to catch initial render, then watch for week navigation
 setTimeout(hideEmptyDays, 500);
 setTimeout(hideEmptyDays, 1500);
 const momoEl = document.querySelector('[data-momo-schedule]');
