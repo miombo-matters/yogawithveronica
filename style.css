@@ -359,7 +359,13 @@ h3 { font-size: 1.2rem; font-weight: 500; }
   font-weight: 500 !important;
   font-size: 1.2rem !important;
 }
+.momo-embed .momo-date-pagination {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
 .momo-embed .momo-date-pagination__period {
+  flex: 1 !important;
   font-family: var(--font-serif) !important;
   font-weight: 500 !important;
   color: var(--navy) !important;
